@@ -1,5 +1,4 @@
 package Tests;
-
 import Pages.CartPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,7 +9,6 @@ public class CartPageTest extends BaseTest{
     public void goToCartTest(){
         CartPage cartPage = new CartPage(driver);
         cartPage.clickOnCartIcon();
-
         String expectedURL = "https://www.saucedemo.com/cart.html";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(expectedURL,actualURL);
@@ -20,7 +18,6 @@ public class CartPageTest extends BaseTest{
     public void goToCheckoutPageTest(){
         CartPage cartPage = new CartPage(driver);
         cartPage.clickOnCheckoutButton();
-
         String expectedURL = "https://www.saucedemo.com/checkout-step-one.html";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(expectedURL,actualURL);
@@ -34,7 +31,6 @@ public class CartPageTest extends BaseTest{
         cartPage.enterPostalCode("60856");
         cartPage.clickOnContinue();
         cartPage.clickOnFinish();
-
         String expectedMessage = "Thank you for your order!";
         String actualMessage = cartPage.getSuccessMessage();
         Assert.assertEquals(expectedMessage,actualMessage);
@@ -44,7 +40,6 @@ public class CartPageTest extends BaseTest{
     public void backToHomeTest(){
         CartPage cartPage = new CartPage(driver);
         cartPage.clickOnbackToHome();
-
         String expectedURL = "https://www.saucedemo.com/inventory.html";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(expectedURL,actualURL);
@@ -54,7 +49,6 @@ public class CartPageTest extends BaseTest{
 //    public void continueShoppingTest(){
 //        CartPage cartPage = new CartPage(driver);
 //        cartPage.clickOnContinueShoppingButton();
-//
 //        String expectedURL = "https://www.saucedemo.com/inventory.html";
 //        String actualURL = driver.getCurrentUrl();
 //        Assert.assertEquals(expectedURL,actualURL);

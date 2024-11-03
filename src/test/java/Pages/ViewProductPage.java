@@ -13,7 +13,6 @@ public class ViewProductPage {
     private By addToCartButton = By.id("add-to-cart");
     private By cartBadge = By.className("shopping_cart_badge");
     private By removeButton = By.id("remove");
-
     private By backToProductsbutton = By.xpath("//body/div[@id='root']/div[@id='page_wrapper']/div[@id='contents_wrapper']/div[@id='header_container']/div[2]/div[1]/button[1]/img[1]");
 
     public  ViewProductPage(WebDriver driver){

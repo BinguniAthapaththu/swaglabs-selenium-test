@@ -14,7 +14,6 @@ public class CartPage {
     private By continueButton = By.id("continue");
     private By finishButton = By.id("finish");
     private By backToHomeButton = By.id("back-to-products");
-
     private By successMessage = By.xpath("//h2[contains(text(),'Thank you for your order!')]");
 
     public CartPage(WebDriver driver){

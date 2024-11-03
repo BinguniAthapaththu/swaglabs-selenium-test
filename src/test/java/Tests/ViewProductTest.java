@@ -9,7 +9,6 @@ public class ViewProductTest extends BaseTest{
     public void goToViewProductPageTest(){
         ViewProductPage viewProductPage = new ViewProductPage(driver);
         viewProductPage.clickOnProduct();
-
         String expectedURL = "https://www.saucedemo.com/inventory-item.html?id=4";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(expectedURL,actualURL);
@@ -19,7 +18,6 @@ public class ViewProductTest extends BaseTest{
     public void addProductToCartTest(){
         ViewProductPage viewProductPage = new ViewProductPage(driver);
         viewProductPage.addToCart();
-
         String expectedCartValue = "1";
         String actualCartValue = viewProductPage.getCartValue();
         Assert.assertEquals(expectedCartValue,actualCartValue);
@@ -29,7 +27,6 @@ public class ViewProductTest extends BaseTest{
     public void removeProductFromCartTest(){
         ViewProductPage viewProductPage = new ViewProductPage(driver);
         viewProductPage.removeProductFromCart();
-
         boolean expectedValue = true;
         boolean actualValue = viewProductPage.isCartBadgePresent();
         Assert.assertEquals(expectedValue,actualValue);
@@ -39,7 +36,6 @@ public class ViewProductTest extends BaseTest{
     public void backToProductsPageTest(){
         ViewProductPage viewProductPage = new ViewProductPage(driver);
         viewProductPage.clickOnBackToProducts();
-
         String expectedURL = "https://www.saucedemo.com/inventory.html";
         String actualURL = driver.getCurrentUrl();
         Assert.assertEquals(expectedURL,actualURL);

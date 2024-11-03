@@ -1,6 +1,5 @@
 package Tests;
 import Pages.LoginPage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +11,6 @@ public class LoginTest extends BaseTest{
         loginPage.enterUsername("standard_user1");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLogin();
-
         String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
         String actualErrorMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
@@ -25,7 +23,6 @@ public class LoginTest extends BaseTest{
         loginPage.enterUsername("locked_out_user");
         loginPage.enterPassword("4523454");
         loginPage.clickLogin();
-
         String expectedErrorMessage = "Epic sadface: Username and password do not match any user in this service";
         String actualErrorMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
@@ -37,7 +34,6 @@ public class LoginTest extends BaseTest{
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLogin();
-
         String expectedErrorMessage = "Epic sadface: Username is required";
         String actualErrorMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
@@ -49,7 +45,6 @@ public class LoginTest extends BaseTest{
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterUsername("secret_sauce");
         loginPage.clickLogin();
-
         String expectedErrorMessage = "Epic sadface: Password is required";
         String actualErrorMessage = loginPage.getErrorMessage();
         Assert.assertEquals(expectedErrorMessage,actualErrorMessage);
@@ -62,7 +57,6 @@ public class LoginTest extends BaseTest{
         loginPage.enterUsername("standard_user");
         loginPage.enterPassword("secret_sauce");
         loginPage.clickLogin();
-
         Assert.assertEquals(driver.getCurrentUrl(),"https://www.saucedemo.com/inventory.html");
     }
 }

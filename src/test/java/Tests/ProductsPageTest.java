@@ -9,7 +9,6 @@ public class ProductsPageTest extends BaseTest{
     public void addProductToCartTest(){
         ProductsPage productPage = new ProductsPage(driver);
         productPage.addProductToCart();
-
         String expectedCartValue = "1";
         String actualCartValue = productPage.getCartValue();
         Assert.assertEquals(expectedCartValue,actualCartValue);
@@ -19,7 +18,6 @@ public class ProductsPageTest extends BaseTest{
     public void removeProductFromCartTest(){
         ProductsPage productPage = new ProductsPage(driver);
         productPage.removeProductFromCart();
-
         boolean expectedValue = true;
         boolean actualValue = productPage.isCartBadgePresent();
         Assert.assertEquals(expectedValue,actualValue);
