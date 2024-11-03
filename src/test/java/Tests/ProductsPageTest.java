@@ -1,13 +1,13 @@
 package Tests;
-import Pages.ProductPage;
+import Pages.ProductsPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ProductPageTest extends BaseTest{
+public class ProductsPageTest extends BaseTest{
 
-    @Test(priority = 0)
+    @Test(priority = 0) 
     public void addProductToCartTest(){
-        ProductPage productPage = new ProductPage(driver);
+        ProductsPage productPage = new ProductsPage(driver);
         productPage.addProductToCart();
 
         String expectedCartValue = "1";
@@ -17,7 +17,7 @@ public class ProductPageTest extends BaseTest{
 
     @Test(priority = 1)
     public void removeProductFromCartTest(){
-        ProductPage productPage = new ProductPage(driver);
+        ProductsPage productPage = new ProductsPage(driver);
         productPage.removeProductFromCart();
 
         boolean expectedValue = true;

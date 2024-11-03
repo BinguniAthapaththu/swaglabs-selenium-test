@@ -6,20 +6,26 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class ProductPage {
-
+public class ViewProductPage {
     private WebDriver driver;
     private WebDriverWait wait;
-    private By addToCartButton = By.id("add-to-cart-sauce-labs-backpack");
+    private By inventoryItem = By.id("item_4_title_link");
+    private By addToCartButton = By.id("add-to-cart");
     private By cartBadge = By.className("shopping_cart_badge");
-    private By removeButton = By.id("remove-sauce-labs-backpack");
+    private By removeButton = By.id("remove");
 
-    public ProductPage(WebDriver driver){
+    private By backToProductsbutton = By.xpath("//body/div[@id='root']/div[@id='page_wrapper']/div[@id='contents_wrapper']/div[@id='header_container']/div[2]/div[1]/button[1]/img[1]");
+
+    public  ViewProductPage(WebDriver driver){
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public void addProductToCart(){
+    public void clickOnProduct(){
+        driver.findElement(inventoryItem).click();
+    }
+
+    public void addToCart(){
         driver.findElement(addToCartButton).click();
     }
 
@@ -34,5 +40,9 @@ public class ProductPage {
 
     public boolean isCartBadgePresent(){
         return driver.findElements(cartBadge).isEmpty();
+    }
+
+    public void clickOnBackToProducts(){
+        driver.findElement(backToProductsbutton).click();
     }
 }

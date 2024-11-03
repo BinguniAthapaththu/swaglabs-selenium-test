@@ -4,7 +4,8 @@
     <test verbose="2" preserve-order="true" name="E:/Projects/TestNG/SwagLabs">
         <classes>
             <class name="Tests.LoginTest"/>
-            <class name="Tests.ProductPageTest"/>
+            <class name="Tests.ProductsPageTest"/>
+            <class name="Tests.ViewProductTest"/>
         </classes>
     </test>
 </suite>
