@@ -3,13 +3,14 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="E:/Projects/TestNG/SwagLabs(failed)">
     <classes>
-      <class name="Tests.ViewProductTest">
+      <class name="Tests.CartPageTest">
         <methods>
-          <include name="addProductToCartTest"/>
+          <include name="goToCartTest1"/>
           <include name="teardown"/>
           <include name="setup"/>
+          <include name="continueShoppingTest2"/>
         </methods>
-      </class> <!-- Tests.ViewProductTest -->
+      </class> <!-- Tests.CartPageTest -->
     </classes>
   </test> <!-- E:/Projects/TestNG/SwagLabs(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->
